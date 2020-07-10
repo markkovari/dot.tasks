@@ -8,7 +8,8 @@ tasks:
     context: brew
     command: install alacritty
 
-context:
+contexts:
+
   bash:
     executable:
       bin: /bin/bash
