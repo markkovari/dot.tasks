@@ -7,7 +7,6 @@ tasks:
   brew-install:
     context: brew
     command: ${ARGS}
-    conditions: brew --version
 
 contexts:
 
