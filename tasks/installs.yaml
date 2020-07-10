@@ -4,16 +4,20 @@ tasks:
     command:
       - curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
 
-  install-alacritty:
+  brew-install:
     context: brew
-    command: install alacritty
+    command: ${ARGS}
+    conditions: brew --version
 
 contexts:
 
   bash:
     executable:
       bin: /bin/bash
-    before: echo -n "using bash as context for taskctl..."
+      args:
+        - -c
+    before: echo "using bash as context for taskctl..."
+
   brew:
     executable:
       bin: brew
