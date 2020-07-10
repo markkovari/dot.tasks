@@ -1,4 +1,16 @@
 tasks:
   install-brew:
+    context: bash
     command:
-      - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+      - curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+
+
+context:
+  bash:
+    executable:
+      bin: /bin/bash
+    before: echo -n "using bash as context for taskctl..."
+  brew:
+    executable:
+      bin: /usr/local/bin/brew
+    before: echo -n "using brew package manager for taskctl..."
